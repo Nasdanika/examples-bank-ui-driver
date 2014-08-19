@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Actors API spec for the Bank application
+Bundle-SymbolicName: org.nasdanika.examples.bank.ui.driver.actors
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Nasdanika LLC
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Require-Bundle: org.nasdanika.examples.bank.ui.driver.pages;bundle-version="0.1.0";visibility:=reexport
+Export-Package: org.nasdanika.examples.bank.ui.driver.actors

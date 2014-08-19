@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.nasdanika.examples.bank.ui.driver.feature_0.1.0.qualifier.jar" id="org.nasdanika.examples.bank.ui.driver.feature" version="0.1.0.qualifier">
+      <category name="org.nasdanika.examples.category"/>
+   </feature>
+   <category-def name="org.nasdanika.examples.bank.ui.driver.category" label="Nasdanika Examples Bank UI Driver">
+      <description>
+         UI driver for the example bank application to use in tests.
+      </description>
+   </category-def>
+</site>
