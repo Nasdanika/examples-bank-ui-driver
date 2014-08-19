@@ -18,6 +18,7 @@ public class BankPageFactoryImpl implements BankPageFactory {
 	
 	public void activate(ComponentContext context) {
 		baseURL = (String) context.getProperties().get("base-url");
+		System.out.println("Page factory component activated with base URL '"+baseURL+"'");
 	}
 	
 	public void setBaseURL(String baseURL) {
