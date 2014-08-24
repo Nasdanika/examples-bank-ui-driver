@@ -1,12 +1,17 @@
 package org.nasdanika.examples.bank.ui.driver.pages.guest;
 
+import org.nasdanika.webtest.Description;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.Title;
 
+@Title("Guest Home Page")
+@Description("Page class for testing guest home page")
 public interface GuestHome extends Page {
 	
 	/**
 	 * Navigates to the home page.
 	 */
+	@Description("Navigates to the home page")
 	void open();
 	
 	void enterOnlineId(String onlineId);
