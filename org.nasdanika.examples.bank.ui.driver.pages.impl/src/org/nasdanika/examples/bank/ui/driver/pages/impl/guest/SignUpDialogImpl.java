@@ -77,7 +77,7 @@ public class SignUpDialogImpl implements SignUpDialog {
 	}
 
 	@Override
-	public Page clickSignUp() {
+	public Page<WebDriver> clickSignUp() {
 		signupSubmitButton.click();
 		try {
 			webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("banner")));

@@ -1,13 +1,14 @@
 package org.nasdanika.examples.bank.ui.driver.pages.customer;
 
 import org.nasdanika.webtest.Page;
+import org.openqa.selenium.WebDriver;
 
 /**
  * Base interface for customer pages.
  * @author Pavel Vlasov
  *
  */
-public interface CustomerPage extends Page {
+public interface CustomerPage extends Page<WebDriver> {
 	
 	/**
 	 * Clicks sign-out link.
@@ -19,7 +20,7 @@ public interface CustomerPage extends Page {
 	 * @param confirm
 	 * @return
 	 */
-	Page confirmSignOut(boolean confirm);	
+	Page<WebDriver> confirmSignOut(boolean confirm);	
 	
 	/**
 	 * @return Text in the nav-bar banner.

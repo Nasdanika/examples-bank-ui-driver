@@ -6,8 +6,6 @@ import org.nasdanika.examples.bank.ui.driver.pages.impl.BankPageFactoryImpl;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.customer.CustomerHomeImpl;
 import org.nasdanika.webtest.Page;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NotFoundException;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -59,7 +57,7 @@ public class GuestHomeImpl implements GuestHome {
 	}
 
 	@Override
-	public Page clickSignIn() {
+	public Page<WebDriver> clickSignIn() {
 		if (!signInButton.isDisplayed() && navBarToggleButton.isDisplayed()) {
 			navBarToggleButton.click();
 			webDriverWait.until(ExpectedConditions.visibilityOf(signInButton));

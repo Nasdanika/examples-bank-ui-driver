@@ -37,7 +37,7 @@ public class CustomerPageImpl implements CustomerPage {
 	}
 
 	@Override
-	public Page confirmSignOut(boolean confirm) {
+	public Page<WebDriver> confirmSignOut(boolean confirm) {
 		// TODO Auto-generated method stub
 		return null;
 	}

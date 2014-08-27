@@ -3,9 +3,10 @@ package org.nasdanika.examples.bank.ui.driver.actors;
 import org.nasdanika.examples.bank.ui.driver.pages.guest.GuestHome;
 import org.nasdanika.webtest.Actor;
 import org.nasdanika.webtest.Description;
+import org.openqa.selenium.WebDriver;
 
 @Description("Unauthenticated user")
-public interface Guest extends Actor {
+public interface Guest extends Actor<WebDriver> {
 	
 	/**
 	 * 
@@ -15,7 +16,7 @@ public interface Guest extends Actor {
 	 * self otherwise.
 	 */
 	@Description("Enter Online ID and Password and click 'Sign in' button.")
-	Actor signIn(String onlineId, String password);
+	Actor<WebDriver> signIn(String onlineId, String password);
 
 	/**
 	 * Registers new customer.
@@ -25,7 +26,7 @@ public interface Guest extends Actor {
 	 * @param passwordConfirmation
 	 * @return Customer if sign-up successful, Guest otherwise.
 	 */
-	Actor signUp(String onlineId, String name, String password, String passwordConfirmation);
+	Actor<WebDriver> signUp(String onlineId, String name, String password, String passwordConfirmation);
 
 	GuestHome goHome();
 

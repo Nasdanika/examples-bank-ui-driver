@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 class GuestImpl implements Guest {
 
 	private BankActorFactory factory;
-	private Page currentPage;
+	private Page<WebDriver> currentPage;
 	private WebDriver webDriver;
 
 	GuestImpl(BankActorFactory factory, WebDriver webDriver) {
@@ -21,12 +21,12 @@ class GuestImpl implements Guest {
 	}
 
 	@Override
-	public Page getCurrentPage() {
+	public Page<WebDriver> getCurrentPage() {
 		return currentPage;
 	}
 
 	@Override
-	public Actor signIn(String onlineId, String password) {
+	public Actor<WebDriver> signIn(String onlineId, String password) {
 		GuestHome home = factory.getPageFactory().createGuestHome(webDriver);
 		home.enterOnlineId(onlineId);
 		home.enterPassword(password);
@@ -38,14 +38,14 @@ class GuestImpl implements Guest {
 	}
 
 	@Override
-	public Actor signUp(
+	public Actor<WebDriver> signUp(
 			String onlineId, 
 			String name, 
 			String password,
 			String passwordConfirmation) {
 		GuestHome home = factory.getPageFactory().createGuestHome(webDriver);
 		currentPage = home;
-		Page signUpResult = home.clickSignUp()
+		Page<WebDriver> signUpResult = home.clickSignUp()
 				.waitToAppear()
 				.enterOnlineId(onlineId)
 				.enterName(name)
