@@ -5,12 +5,12 @@ import org.nasdanika.examples.bank.ui.driver.pages.guest.SignUpDialog;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.BankPageFactoryImpl;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.customer.CustomerHomeImpl;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.WebTestUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -64,14 +64,10 @@ public class GuestHomeImpl implements GuestHome {
 		}
 		this.signInButton.click();
 		try {
-			webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("banner")));
-			return PageFactory.initElements(
-					webDriver, 
-					CustomerHomeImpl.class);
+			return WebTestUtil.initElements(webDriver, CustomerHomeImpl.class);
 		} catch (WebDriverException e) { 
 			try {
-				webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("authentication-failed-modal")));
-				return PageFactory.initElements(webDriver, SignInFailedDialogImpl.class);
+				return WebTestUtil.initElements(webDriver, SignInFailedDialogImpl.class);
 			} catch (WebDriverException e1) {
 				return this;
 			}
@@ -96,8 +92,7 @@ public class GuestHomeImpl implements GuestHome {
 			webDriverWait.until(ExpectedConditions.visibilityOf(signUpMenuItem));
 		}
 		signUpMenuItem.click();
-		webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("rId")));
-		return PageFactory.initElements(webDriver, SignUpDialogImpl.class);
+		return WebTestUtil.initElements(webDriver, SignUpDialogImpl.class);
 	}
 
 }
