@@ -5,6 +5,7 @@ import org.nasdanika.examples.bank.ui.driver.pages.guest.SignUpDialog;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.BankPageFactoryImpl;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.customer.CustomerHomeImpl;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.Screenshot;
 import org.nasdanika.webtest.WebTestUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -79,7 +80,11 @@ public class GuestHomeImpl implements GuestHome {
 		return webDriver;
 	}
 
+	/**
+	 * Before screenshot is suppressed as it is irrelevant.
+	 */
 	@Override
+	@Screenshot({Screenshot.When.AFTER, Screenshot.When.EXCEPTION})
 	public void open() {
 		getWebDriver().get(factory.getBaseURL()+"/index.html");
 		new WebDriverWait(webDriver, 3).until(ExpectedConditions.visibilityOfElementLocated(By.id("main")));		

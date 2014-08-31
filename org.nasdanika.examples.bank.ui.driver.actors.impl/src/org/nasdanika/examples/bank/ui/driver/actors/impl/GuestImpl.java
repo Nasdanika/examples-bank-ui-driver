@@ -7,6 +7,7 @@ import org.nasdanika.examples.bank.ui.driver.actors.BankActorFactory;
 import org.nasdanika.examples.bank.ui.driver.actors.Guest;
 import org.nasdanika.webtest.Actor;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.Screenshot;
 import org.openqa.selenium.WebDriver;
 
 class GuestImpl implements Guest {
@@ -63,7 +64,11 @@ class GuestImpl implements Guest {
 		return this;
 	}
 	
+	/**
+	 * Before screenshot is suppressed as it is irrelevant.
+	 */
 	@Override
+	@Screenshot({Screenshot.When.AFTER, Screenshot.When.EXCEPTION})
 	public GuestHome goHome() {
 		currentPage = factory.getPageFactory().createGuestHome(webDriver);
 		((GuestHome) currentPage).open();
