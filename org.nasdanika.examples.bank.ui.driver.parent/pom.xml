@@ -99,5 +99,6 @@
 		<module>../org.nasdanika.examples.bank.ui.driver.pages</module>
 		<module>../org.nasdanika.examples.bank.ui.driver.pages.impl</module>
 		<module>../org.nasdanika.examples.bank.ui.driver.feature</module>
+		<module>../org.nasdanika.examples.bank.ui.driver.repository</module>
 	</modules>
 </project>
