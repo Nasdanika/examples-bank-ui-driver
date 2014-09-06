@@ -47,7 +47,6 @@ class GuestImpl implements Guest {
 		GuestHome home = factory.getPageFactory().createGuestHome(webDriver);
 		currentPage = home;
 		Page<WebDriver> signUpResult = home.clickSignUp()
-				.waitToAppear()
 				.enterOnlineId(onlineId)
 				.enterName(name)
 				.enterPassword(password)

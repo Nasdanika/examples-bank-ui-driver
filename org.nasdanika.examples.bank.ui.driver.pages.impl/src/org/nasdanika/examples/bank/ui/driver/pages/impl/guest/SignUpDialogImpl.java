@@ -33,12 +33,6 @@ public class SignUpDialogImpl implements SignUpDialog {
 	private WebElement signupErrorMessage;
 
 	@Override
-	public SignUpDialog waitToAppear() {
-		webDriverWait.until(ExpectedConditions.visibilityOf(rId));
-		return this;
-	}
-
-	@Override
 	public SignUpDialog enterOnlineId(String onlineId) {
 		if (onlineId==null) {
 			rId.clear();

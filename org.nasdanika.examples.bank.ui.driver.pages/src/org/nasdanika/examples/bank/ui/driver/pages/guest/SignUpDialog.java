@@ -10,8 +10,6 @@ import org.openqa.selenium.WebDriver;
  */
 public interface SignUpDialog extends Page<WebDriver> {
 
-	SignUpDialog waitToAppear();
-
 	SignUpDialog enterOnlineId(String onlineId);
 
 	SignUpDialog enterName(String name);
