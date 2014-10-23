@@ -12,11 +12,13 @@ public interface Guest extends Actor<WebDriver> {
 	 * 
 	 * @param user
 	 * @param password
-	 * @return Actor for the authenticated user (Customer) if log-in succesful, 
+	 * @return Actor for the authenticated user (Customer) if log-in successful, 
 	 * self otherwise.
 	 */
 	@Description("Enter Online ID and Password and click 'Sign in' button.")
-	Actor<WebDriver> signIn(String onlineId, String password);
+	Actor<WebDriver> signIn(
+			String onlineId, 
+			String password);
 
 	/**
 	 * Registers new customer.
@@ -26,7 +28,11 @@ public interface Guest extends Actor<WebDriver> {
 	 * @param passwordConfirmation
 	 * @return Customer if sign-up successful, Guest otherwise.
 	 */
-	Actor<WebDriver> signUp(String onlineId, String name, String password, String passwordConfirmation);
+	Actor<WebDriver> signUp(
+			String onlineId, 
+			String name, 
+			String password, 
+			String passwordConfirmation);
 
 	GuestHome goHome();
 
