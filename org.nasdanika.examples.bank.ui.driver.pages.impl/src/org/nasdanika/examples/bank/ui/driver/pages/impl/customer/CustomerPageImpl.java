@@ -2,6 +2,7 @@ package org.nasdanika.examples.bank.ui.driver.pages.impl.customer;
 
 import org.nasdanika.examples.bank.ui.driver.pages.customer.CustomerPage;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.ReflectivePageBase;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -10,7 +11,7 @@ import org.openqa.selenium.WebElement;
  * @author Pavel Vlasov
  *
  */
-public class CustomerPageImpl implements CustomerPage {
+public class CustomerPageImpl extends ReflectivePageBase<WebDriver> implements CustomerPage {
 
 	private WebDriver driver;
 	

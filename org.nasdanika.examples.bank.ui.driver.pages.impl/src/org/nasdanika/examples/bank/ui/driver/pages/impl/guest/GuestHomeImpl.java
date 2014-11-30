@@ -5,6 +5,7 @@ import org.nasdanika.examples.bank.ui.driver.pages.guest.SignUpDialog;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.BankPageFactoryImpl;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.customer.CustomerHomeImpl;
 import org.nasdanika.webtest.Page;
+import org.nasdanika.webtest.ReflectivePageBase;
 import org.nasdanika.webtest.Screenshot;
 import org.nasdanika.webtest.WebTestUtil;
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class GuestHomeImpl implements GuestHome {
+public class GuestHomeImpl extends ReflectivePageBase<WebDriver> implements GuestHome {
 		
 	private BankPageFactoryImpl factory;
 	private WebDriver webDriver;	
