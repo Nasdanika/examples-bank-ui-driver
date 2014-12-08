@@ -46,7 +46,11 @@ public class GuestHomeImpl extends ReflectivePageBase<WebDriver> implements Gues
 			navBarToggleButton.click();
 			webDriverWait.until(ExpectedConditions.visibilityOf(this.onlineId));
 		}
-		this.onlineId.sendKeys(onlineId);
+		if (onlineId==null) {
+			this.onlineId.clear();
+		} else {
+			this.onlineId.sendKeys(onlineId);
+		}
 	}
 
 	@Override
@@ -55,7 +59,11 @@ public class GuestHomeImpl extends ReflectivePageBase<WebDriver> implements Gues
 			navBarToggleButton.click();
 			webDriverWait.until(ExpectedConditions.visibilityOf(this.password));
 		}
-		this.password.sendKeys(password);
+		if (password==null) {
+			this.password.clear();
+		} else {
+			this.password.sendKeys(password);
+		}
 	}
 
 	@Override
