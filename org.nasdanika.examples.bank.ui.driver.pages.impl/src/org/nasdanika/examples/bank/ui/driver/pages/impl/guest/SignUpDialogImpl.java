@@ -4,7 +4,7 @@ import org.nasdanika.examples.bank.ui.driver.pages.guest.GuestHome;
 import org.nasdanika.examples.bank.ui.driver.pages.guest.SignUpDialog;
 import org.nasdanika.examples.bank.ui.driver.pages.impl.customer.CustomerHomeImpl;
 import org.nasdanika.webtest.Page;
-import org.nasdanika.webtest.ReflectivePageBase;
+import org.nasdanika.webtest.ReflectivePageFragmentBase;
 import org.nasdanika.webtest.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 @Wait(id="rId")
-public class SignUpDialogImpl extends ReflectivePageBase<WebDriver> implements SignUpDialog {
+public class SignUpDialogImpl extends ReflectivePageFragmentBase<WebDriver> implements SignUpDialog {
 
 	private WebDriver driver;
 	private WebDriverWait webDriverWait;
